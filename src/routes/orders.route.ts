@@ -1,8 +1,12 @@
 import { Router } from 'express';
 import ordersController from '../controllers/orders.controller';
+import auth from '../middlewares/auth.middleware';
+import validateOrderUser from '../middlewares/orderUser.middleware';
+import validateOrderProduct from '../middlewares/orderProduct.middleware';
 
-const transactionsRouter = Router();
+const orderRouter = Router();
 
-transactionsRouter.get('/', ordersController.getAllOrders);
+orderRouter.post('/', auth, validateOrderUser, validateOrderProduct, ordersController.addOrder);
+orderRouter.get('/', ordersController.getAllOrders);
 
-export default transactionsRouter;
+export default orderRouter;

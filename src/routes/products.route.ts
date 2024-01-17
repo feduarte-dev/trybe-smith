@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import productsController from '../controllers/products.controller';
-import validateProduct from '../middlewares/productName.middleware copy';
+import validateProduct from '../middlewares/product.middleware';
 
-const transactionsRouter = Router();
+const products = Router();
 
-transactionsRouter.post('/', validateProduct, productsController.addProduct);
-transactionsRouter.get('/', productsController.getAllProducts);
+products.post('/', validateProduct, productsController.addProduct);
+products.get('/', productsController.getAllProducts);
 
-export default transactionsRouter;
+export default products;

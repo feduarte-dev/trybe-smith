@@ -12,7 +12,6 @@ describe("POST /products", function () {
     sinon.restore();
   });
 
-  describe("quando a requisição é feita com dados válidos", function () {
     it("deve retornar um status 201 com um produto adicionado", async function () {
       const mockedProduct = productsModel.build(
         productsMock.mockedProductResponse
@@ -27,5 +26,5 @@ describe("POST /products", function () {
 
       expect(response.status).to.equal(201);
     });
+
   });
-});

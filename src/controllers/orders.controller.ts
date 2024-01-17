@@ -6,7 +6,12 @@ const getAllOrders = async (_req: Request, res: Response) => {
   return res.status(status).json(data);
 };
 
+const addOrder = async (req: Request, res: Response) => {
+  const { status, data } = await ordersService.addOrder(req.body);
+  return res.status(status).json(data);
+};
+
 export default { 
   getAllOrders,
-
+  addOrder,
 };

@@ -10,7 +10,6 @@ chai.use(chaiHttp);
 describe('GET /products', function () { 
   beforeEach(function () { sinon.restore(); });
 
-  describe("quando a requisição é feita", function () {
     it("deve retornar um status 200 com uma lista de  produtos", async function () {
       const mockedResponse = productsModel.bulkBuild(productsMock.mockedProductsArrayResponse);
       
@@ -22,4 +21,3 @@ describe('GET /products', function () {
       expect(response.status).to.equal(200);
     });
   });
-});

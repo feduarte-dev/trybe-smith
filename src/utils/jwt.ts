@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { TokenPayload } from '../types/login';
+import { TokenPayload } from '../types/Login';
 
 const secret = process.env.JWT_SECRET || 'secret';
 
@@ -9,7 +9,9 @@ const sign = (payload: TokenPayload): string => {
 };
 
 const verify = (token: string): TokenPayload => {
-  const data = jwt.verify(token, secret) as TokenPayload;
+  const fixedToken = token.split(' ')[1];
+  const data = jwt.verify(fixedToken, secret) as TokenPayload;
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@2', data);
   return data;
 };
 

@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import UserModel from '../database/models/user.model';
 import jwt from '../utils/jwt';
-import { LoginBody, Token } from '../types/login';
+import { LoginBody, Token } from '../types/Login';
 import { ServiceResponse } from '../types/ServiceResponse';
 
 const verifyLogin = async (login: LoginBody):Promise<ServiceResponse<Token>> => {
