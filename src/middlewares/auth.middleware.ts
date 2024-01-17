@@ -14,7 +14,7 @@ async function auth(req: Request, res: Response, next: NextFunction) {
   
     await UserModel.findOne({ where: { username: decoded.username } });
     next();
-    // if (!user) return res.status(401).json({ message: 'Invalid token' }); 
+
   } catch (error) {
     if (error instanceof Error) {
       return res.status(401).json({ message: 'Invalid token' });
