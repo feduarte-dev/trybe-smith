@@ -16,6 +16,9 @@ For this project, I developed a CRUD (Create, Read, Update and Delete) of mediev
 - SEQUELIZE
 - JSON WEB TOKEN
 - BCRYPT
+- CHAI
+- SINON
+- MOCHA
 
 ### What I Learned
 
